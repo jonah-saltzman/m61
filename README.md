@@ -12,8 +12,7 @@ As this was my first real C/C++ project, I would do several things differently n
 I overused macros when I should have used inline functions to ensure type safety and readability.
 
 All of the code in m61.cc and m61.hh was written by me (with the exception of a helper class
-to allow C++ library structures to use my allocator, for testing). The tests were written by course
-staff, except tests 52-59, which I wrote.
+to allow C++ library structures to use my allocator, for testing).
 
 Internal metadata documentation
 ----------------------

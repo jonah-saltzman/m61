@@ -1,4 +1,4 @@
-TESTS = $(patsubst %.cc,%,$(sort $(wildcard test[0-9][0-9].cc test[0-9][0-9][0-9a-z].cc test[0-9][0-9][0-9][a-z].cc)))
+TESTS = $(patsubst ./tests/%.cc,%,$(sort $(wildcard ./tests/test[0-9][0-9].cc test[0-9][0-9][0-9a-z].cc ./tests/test[0-9][0-9][0-9][a-z].cc)))
 all: $(TESTS)
 
 -include build/rules.mk
@@ -10,7 +10,7 @@ LIBS = -lm
 all:
 	@echo '*** Run `make check` or `make check-all` to check your work.' 1>&2
 
-test%: m61.o hexdump.o test%.o
+test%: m61.o hexdump.o ./tests/test%.o
 	$(call run,$(CXX) $(CXXFLAGS) $(LDFLAGS) $(O) -o $@ $^ $(LIBS),LINK $@)
 
 check:

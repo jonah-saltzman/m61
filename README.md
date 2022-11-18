@@ -37,27 +37,7 @@ previous block is offset -2. These two pointers are the only additional metadata
 
 Allocated blocks have the following structure of internal metadata:
 
-   -----------------
-   |    header     |
-   -----------------
-   |    payload    |
-   -----------------
-   | pld | magic # |
-   -----------------
-   |  ??padding??  |
--5 -----------------
-   |req sz | line #|
--4 -----------------
-   | filename ptr  |
--3 -----------------
-   |  header addr  |
--2 -----------------
-   |   list_prev   |
--1 -----------------
-   |   list_next   |
- 0 -----------------
-   |    footer     |
-   -----------------
+![internal metadata documentation](https://i.imgur.com/9uXgdoU.png)
 
 Each full block of metadata represents a WORD_SIZE block (sizeof(size_t)). To save
 space, the request size and line number are stored as half-word integers. So the offset
